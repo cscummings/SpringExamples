@@ -35,8 +35,8 @@ import gov.nv.dwss.processor.ExternalJobResponseAPIProcessor;
 @EnableJms
 @Configuration
 @Import({JmsConfig.class, DataBaseConfig.class})
-@ComponentScan(basePackages = { Constants.base_package, "gov.nv.dwss.common",
-		"gov.nv.dwss.model", "gov.nv.dwss.config", "gov.nv.dwss.jms" })
+@ComponentScan(basePackages = { Constants.base_package, "com.cscummings.common",
+		"com.cscummings.model", "com.cscummings.config", "com.cscummings.jms" })
 
 @EnableBatchProcessing
 public class BatchConfig {

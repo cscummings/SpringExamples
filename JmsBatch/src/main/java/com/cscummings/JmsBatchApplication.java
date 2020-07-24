@@ -1,4 +1,4 @@
-package gov.nv.dwss;
+package com.cscummings;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

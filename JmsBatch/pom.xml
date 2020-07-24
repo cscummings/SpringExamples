@@ -9,7 +9,7 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>gov.nv.dwss</groupId>
+	<groupId>com.cscummings</groupId>
 	<artifactId>JmsBatch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>JmsBatch</name>

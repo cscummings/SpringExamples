@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class Constants {
 
-	public static final String base_package = "gov.nv.dwss";
+	public static final String base_package = "com.cscummings";
 	
 	@Resource
     @Value("${select_new_SNAP_elig_members}")
