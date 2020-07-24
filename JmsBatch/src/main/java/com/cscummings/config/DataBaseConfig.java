@@ -1,4 +1,4 @@
-package gov.nv.dwss.config;
+package com.cscummings.config;
 
 import java.util.Properties;
 
@@ -17,7 +17,7 @@ import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import gov.nv.dwss.common.Constants;
+import com.cscummings.common.Constants;
 
 @Configuration
 public class DataBaseConfig {

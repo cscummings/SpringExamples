@@ -1,4 +1,4 @@
-package gov.nv.dwss.jms;
+package com.cscummings.jms;
 import javax.annotation.PostConstruct;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.core.MessageCreator;
 
-import gov.nv.dwss.config.JmsConfig;
+import com.cscummings.config.JmsConfig;
 
 public class ExternalJobResponseApiSender {
     @Autowired

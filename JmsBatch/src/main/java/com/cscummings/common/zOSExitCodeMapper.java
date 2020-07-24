@@ -1,4 +1,4 @@
-package gov.nv.dwss.common;
+package com.cscummings.common;
 
 import java.util.HashMap;
 import java.util.Map;

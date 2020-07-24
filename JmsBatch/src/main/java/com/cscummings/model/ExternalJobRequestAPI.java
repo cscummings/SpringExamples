@@ -1,4 +1,4 @@
-package gov.nv.dwss.model;
+package com.cscummings.model;
 
 import java.io.Serializable;
 
@@ -56,12 +56,10 @@ import javax.xml.bind.annotation.XmlType;
  "transWorkflow",
  "transCount",
  "status",
- "statusText",
- "correlationID",
- "timeStamp"
+ "statusText"
 })
-@XmlRootElement(name = "ExternalJobResponseAPI")
-public class ExternalJobResponseAPI implements Serializable {
+@XmlRootElement(name = "ExternalJobRequestAPI")
+public class ExternalJobRequestAPI implements Serializable {
   private static final long serialversionUID = 129348938L; 
  @XmlElement(name = "BatchID")
  private int batchID;
@@ -91,12 +89,6 @@ public class ExternalJobResponseAPI implements Serializable {
  private String status;
  @XmlElement(name = "StatusText", required = true)
  private String statusText;
- 
- @XmlElement(name = "CorrelationID")
- private String correlationID;
- 
- @XmlElement(name = "TimeStamp")
- private long timeStamp;
 
  /**
   * Gets the value of the batchID property.
@@ -338,31 +330,18 @@ public class ExternalJobResponseAPI implements Serializable {
      this.statusText = value;
  }
 
-	public String getCorrelationID() {
-	return correlationID;
-}
-
-public void setCorrelationID(String correlationID) {
-	this.correlationID = correlationID;
-}
-
-	public long getTimeStamp() {
-	return timeStamp;
-}
-
-public void setTimeStamp(long l) {
-	this.timeStamp = l;
-}
-
 	@Override
 	public String toString() {
-		return "ExternalJobResponseAPI [batchID=" + batchID + ", batchName=" + batchName + ", chanJobsCompleted="
-				+ chanJobsCompleted + ", chanJobsCreated=" + chanJobsCreated + ", chanJobsErrored=" + chanJobsErrored
-				+ ", chanJobsStopped=" + chanJobsStopped + ", chanJobsWorkflow=" + chanJobsWorkflow
-				+ ", transCompleted=" + transCompleted + ", transErrored=" + transErrored + ", transStopped="
-				+ transStopped + ", transWorkflow=" + transWorkflow + ", transCount=" + transCount + ", status="
-				+ status + ", statusText=" + statusText + ", correlationID=" + correlationID + ", timeStamp="
-				+ timeStamp + "]";
+		return "ExternalJobRequestAPI [batchID=" + batchID + ", batchName="
+				+ batchName + ", chanJobsCompleted=" + chanJobsCompleted
+				+ ", chanJobsCreated=" + chanJobsCreated + ", chanJobsErrored="
+				+ chanJobsErrored + ", chanJobsStopped=" + chanJobsStopped
+				+ ", chanJobsWorkflow=" + chanJobsWorkflow
+				+ ", transCompleted=" + transCompleted + ", transErrored="
+				+ transErrored + ", transStopped=" + transStopped
+				+ ", transWorkflow=" + transWorkflow + ", transCount="
+				+ transCount + ", status=" + status + ", statusText="
+				+ statusText + "]";
 	}
 
 }

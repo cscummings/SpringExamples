@@ -1,4 +1,4 @@
-package gov.nv.dwss.config;
+package com.cscummings.config;
 
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
@@ -37,8 +37,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import gov.nv.dwss.model.ExternalJobResponseAPI;
-import gov.nv.dwss.model.MqFormResp;
+import com.cscummings.model.ExternalJobResponseAPI;
+import com.cscummings.model.MqFormResp;
 
 @EnableJms
 @Configuration

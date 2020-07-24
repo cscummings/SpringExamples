@@ -1,4 +1,4 @@
-package gov.nv.dwss.common;
+package com.cscummings.common;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

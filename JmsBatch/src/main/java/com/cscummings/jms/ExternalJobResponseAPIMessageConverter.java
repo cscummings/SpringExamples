@@ -1,4 +1,4 @@
-package gov.nv.dwss.jms;
+package com.cscummings.jms;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -26,10 +26,9 @@ import org.springframework.oxm.Unmarshaller;
 import org.springframework.oxm.XmlMappingException;
 import org.springframework.stereotype.Component;
 
+import com.cscummings.model.ExternalJobResponseAPI;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-
-import gov.nv.dwss.model.ExternalJobResponseAPI;
 
 @Component
 public class ExternalJobResponseAPIMessageConverter implements MessageConverter {

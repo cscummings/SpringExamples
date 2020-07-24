@@ -1,4 +1,4 @@
-package gov.nv.dwss.common;
+package com.cscummings.common;
 
 
 public class EncryptionUtils {

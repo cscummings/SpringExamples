@@ -1,7 +1,7 @@
-package gov.nv.dwss.common;
+package com.cscummings.common;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -10,13 +10,26 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
+/**
+ * @author ccummings
+ *
+ */
+// TODO add logic for RCRT_APL_DT >= date calculation
+// TODO add logic for PRD_BEG_DT begining and end
+// TODO add logic for NEXT_REDET_DT
 
 @Component
 @ConfigurationProperties(prefix = "nomads")
 @Validated
-public class ItemReaderProperties {
-	private static final Logger logger = LoggerFactory.getLogger(ItemReaderProperties.class);
+public class NomadsProperties {
+	private static final Logger logger = LoggerFactory.getLogger(NomadsProperties.class);
+	private static final Calendar c = Calendar.getInstance();
+	private boolean validatedDate = false;
+	
+	private Date currentDate = new Date();
+	
 	private String platform;
+	private String driver;
 	private String url;
 	private String username;
 	private String password;
@@ -30,6 +43,14 @@ public class ItemReaderProperties {
 		this.platform = platform;
 	}
 
+	public String getDriver() {
+		return driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
 	public String getUrl() {
 		return url;
 	}
@@ -39,7 +60,8 @@ public class ItemReaderProperties {
 	}
 
 	public String getUsername() {
-		return username;
+
+		return EncryptionUtils.decrypt(username);
 	}
 
 	public void setUsername(String username) {
@@ -47,7 +69,7 @@ public class ItemReaderProperties {
 	}
 
 	public String getPassword() {
-		return password;
+		return EncryptionUtils.decrypt(password);
 	}
 
 	public void setPassword(String password) {

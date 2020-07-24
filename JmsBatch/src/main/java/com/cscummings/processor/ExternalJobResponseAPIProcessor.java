@@ -1,12 +1,12 @@
-package gov.nv.dwss.processor;
+package com.cscummings.processor;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import gov.nv.dwss.model.ExternalJobResponseAPI;
-import gov.nv.dwss.model.MqFormResp;
+import com.cscummings.model.ExternalJobResponseAPI;
+import com.cscummings.model.MqFormResp;
 
 public class ExternalJobResponseAPIProcessor implements ItemProcessor<ExternalJobResponseAPI, MqFormResp> {
 

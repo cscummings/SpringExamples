@@ -1,4 +1,4 @@
-package gov.nv.dwss.jms;
+package com.cscummings.jms;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import gov.nv.dwss.config.BatchConfig;
-import gov.nv.dwss.model.ExternalJobResponseAPI;
+import com.cscummings.config.BatchConfig;
+import com.cscummings.model.ExternalJobResponseAPI;
 
 @Component
 public class ExternalJobResponseListener implements MessageListener {

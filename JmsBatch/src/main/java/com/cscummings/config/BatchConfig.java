@@ -1,4 +1,4 @@
-package gov.nv.dwss.config;
+package com.cscummings.config;
 
 import javax.sql.DataSource;
 import javax.xml.bind.PropertyException;
@@ -27,10 +27,10 @@ import org.springframework.jms.annotation.EnableJms;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.jms.support.converter.MessageConverter;
 
-import gov.nv.dwss.common.Constants;
-import gov.nv.dwss.model.ExternalJobResponseAPI;
-import gov.nv.dwss.model.MqFormResp;
-import gov.nv.dwss.processor.ExternalJobResponseAPIProcessor;
+import com.cscummings.common.Constants;
+import com.cscummings.model.ExternalJobResponseAPI;
+import com.cscummings.model.MqFormResp;
+import com.cscummings.processor.ExternalJobResponseAPIProcessor;
 
 @EnableJms
 @Configuration

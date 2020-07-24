@@ -1,4 +1,4 @@
-package gov.nv.dwss;
+package com.cscummings;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

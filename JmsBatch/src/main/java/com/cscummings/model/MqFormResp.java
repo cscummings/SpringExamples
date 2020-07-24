@@ -1,4 +1,4 @@
-package gov.nv.dwss.model;
+package com.cscummings.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
