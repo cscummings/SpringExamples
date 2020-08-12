@@ -11,13 +11,14 @@ import org.springframework.validation.annotation.Validated;
  */
 
 @Component
-@ConfigurationProperties(prefix = "database")
+@ConfigurationProperties(prefix = "springbatch.datasource")
 @Validated
 public class SpringBatchDatabaseProperties {
 	private String driver;
 	private String url;
 	private String username;
 	private String password;
+	private String schema;
 	
 	public String getDriver() {
 		return driver;
@@ -32,17 +33,24 @@ public class SpringBatchDatabaseProperties {
 		this.url = url;
 	}
 	public String getUsername() {
+		//return username;
 		return EncryptionUtils.decrypt(username);
 	}
 	public void setUsername(String username) {
 		this.username = username;
 	}
 	public String getPassword() {
+		//return password;
 		return EncryptionUtils.decrypt(password);
 	}
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getSchema() {
+		return schema;
+	}
+	public void setSchema(String schema) {
+		this.schema = schema;
+	}
 	
-
 }

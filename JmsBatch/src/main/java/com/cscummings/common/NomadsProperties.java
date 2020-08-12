@@ -14,22 +14,17 @@ import org.springframework.validation.annotation.Validated;
  * @author ccummings
  *
  */
-// TODO add logic for RCRT_APL_DT >= date calculation
-// TODO add logic for PRD_BEG_DT begining and end
-// TODO add logic for NEXT_REDET_DT
 
 @Component
-@ConfigurationProperties(prefix = "nomads")
+@ConfigurationProperties(prefix = "nomads.datasource")
 @Validated
 public class NomadsProperties {
 	private static final Logger logger = LoggerFactory.getLogger(NomadsProperties.class);
-	private static final Calendar c = Calendar.getInstance();
-	private boolean validatedDate = false;
 	
 	private Date currentDate = new Date();
 	
 	private String platform;
-	private String driver;
+	private String driverClassName;
 	private String url;
 	private String username;
 	private String password;
@@ -43,14 +38,6 @@ public class NomadsProperties {
 		this.platform = platform;
 	}
 
-	public String getDriver() {
-		return driver;
-	}
-
-	public void setDriver(String driver) {
-		this.driver = driver;
-	}
-
 	public String getUrl() {
 		return url;
 	}
@@ -60,7 +47,7 @@ public class NomadsProperties {
 	}
 
 	public String getUsername() {
-
+		//return username;  //for testing don't use decrypt/encrypt
 		return EncryptionUtils.decrypt(username);
 	}
 
@@ -69,6 +56,7 @@ public class NomadsProperties {
 	}
 
 	public String getPassword() {
+		//return password;
 		return EncryptionUtils.decrypt(password);
 	}
 
@@ -83,5 +71,14 @@ public class NomadsProperties {
 	public void setSchema(String schema) {
 		this.schema = schema;
 	}
+
+	public String getDriverClassName() {
+		return driverClassName;
+	}
+
+	public void setDriverClassName(String driverClassName) {
+		this.driverClassName = driverClassName;
+	}
+
 
 }

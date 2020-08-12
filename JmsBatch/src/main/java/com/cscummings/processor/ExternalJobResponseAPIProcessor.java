@@ -3,13 +3,16 @@ package com.cscummings.processor;
 import java.sql.Timestamp;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 
 import com.cscummings.model.ExternalJobResponseAPI;
 import com.cscummings.model.MqFormResp;
 
-public class ExternalJobResponseAPIProcessor implements ItemProcessor<ExternalJobResponseAPI, MqFormResp> {
 
+public class ExternalJobResponseAPIProcessor implements ItemProcessor<ExternalJobResponseAPI, MqFormResp> {
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExternalJobResponseAPIProcessor.class);
 	@Override
 	public MqFormResp process(ExternalJobResponseAPI item) throws Exception {
 		MqFormResp mqFormResp = new MqFormResp();
@@ -22,7 +25,7 @@ public class ExternalJobResponseAPIProcessor implements ItemProcessor<ExternalJo
 		mqFormResp.setResponseReceivedTs(new Timestamp(item.getTimeStamp()));
 		mqFormResp.setResponseXml(item.getStatusText());
 		mqFormResp.setResponseStatus("0");
-		System.out.println(mqFormResp);
+		LOGGER.debug(mqFormResp.toString());
 		return mqFormResp;
 	}
 

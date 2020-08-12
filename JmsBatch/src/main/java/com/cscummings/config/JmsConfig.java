@@ -25,11 +25,12 @@ import org.springframework.jms.support.converter.MessageType;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import com.ibm.mq.jms.MQQueueConnectionFactory;
+import com.ibm.msg.client.wmq.WMQConstants;
+
 import com.cscummings.jms.ExternalJobResponseAPIMessageConverter;
 import com.cscummings.model.ExternalJobRequestAPI;
 import com.cscummings.model.ExternalJobResponseAPI;
-import com.ibm.mq.jms.MQQueueConnectionFactory;
-import com.ibm.msg.client.wmq.WMQConstants;
 
 @Configuration
 public class JmsConfig {
@@ -146,4 +147,5 @@ public class JmsConfig {
 		jmsTemplate.setDefaultDestinationName(queue);
 		return jmsTemplate;
 	}	
+
 }
