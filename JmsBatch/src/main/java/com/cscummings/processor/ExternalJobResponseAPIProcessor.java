@@ -16,7 +16,6 @@ public class ExternalJobResponseAPIProcessor implements ItemProcessor<ExternalJo
 	@Override
 	public MqFormResp process(ExternalJobResponseAPI item) throws Exception {
 		MqFormResp mqFormResp = new MqFormResp();
-		// map ExternalJobResponseAPI to mqFormResp
 		mqFormResp.setIci(item.getBatchName());
 		mqFormResp.setBatchId(item.getBatchID());
 		String correlationID = item.getCorrelationID();

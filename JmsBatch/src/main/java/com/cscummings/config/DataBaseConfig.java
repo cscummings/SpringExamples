@@ -24,35 +24,6 @@ import com.cscummings.common.SpringBatchDatabaseProperties;
 
 @Configuration
 public class DataBaseConfig {
-//	@Value("${nomads.datasource.url}")
-//	private String url;
-//	@Value("${nomads.datasource.username}")
-//	private String username;
-//	@Value("${nomads.datasource.password}")
-//	private String password;
-//	@Value("${nomads.datasource.schema}")
-//	private String schema;
-//	@Value("${nomads.datasource.driver-class-name}")
-//	private String driver;
-//	@Value("${nomads.datasource.platform}")
-//	private String platform;
-//	
-//	@Value("${spring.datasource.url}")
-//	private String springUrl;
-//	@Value("${spring.datasource.username}")
-//	private String springUsername;
-//	@Value("${spring.datasource.password}")
-//	private String springPassword;
-//	@Value("${spring.batch.table-prefix}")
-//	private String springSchema;
-//	@Value("${spring.datasource.driver-class-name}")
-//	private String springDriver;
-//	@Value("${spring.datasource.platform}")
-//	private String springPlatform;	
-//	@Bean
-//	public BatchConfigurer configurer(@Qualifier("batchDataSource") DataSource dataSource){
-//	    return new DefaultBatchConfigurer(batchDataSource());
-//	}
 	
 	@Autowired
 	private NomadsProperties nomadsProps;
@@ -81,30 +52,6 @@ public class DataBaseConfig {
 		return dataSource;
 	}
 	
-//	@Bean
-//	@Primary
-//	@Qualifier("batchTransactionManager")
-//	public PlatformTransactionManager batchTransactionManager() {
-//		final JpaTransactionManager transactionManager = new JpaTransactionManager();
-//		transactionManager.setEntityManagerFactory(batchEntityManagerFactory().getObject());
-//		transactionManager.setDataSource(batchDataSource());
-//		return transactionManager;
-//	}
-//
-//	@Bean
-//	@Primary
-//	public LocalContainerEntityManagerFactoryBean batchEntityManagerFactory() {
-//
-//		LocalContainerEntityManagerFactoryBean lef = new LocalContainerEntityManagerFactoryBean();
-//		// lef.setPackagesToScan(Constants.base_package);
-//		lef.setDataSource(batchDataSource());
-//		lef.setJpaVendorAdapter(jpaVendorAdapter());
-//		lef.setJpaProperties(new Properties());
-//		lef.afterPropertiesSet();
-//
-//		return lef;
-//	}
-
 
 	@Bean(name = "nomadsDatasource")
 	public DataSource nomadsDataSource() {

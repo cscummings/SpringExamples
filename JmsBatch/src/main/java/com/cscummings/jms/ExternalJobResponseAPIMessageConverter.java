@@ -63,13 +63,6 @@ public class ExternalJobResponseAPIMessageConverter implements MessageConverter 
 		ExternalJobResponseAPI ejrAPI = (ExternalJobResponseAPI) object;
 		String payload = null;
 		try {
-//			payload = mapper.writeValueAsString(ejrAPI.toString());
-			// ExternalJobResponseAPI ejrAPI = xmlMapper.readValue(object.toString(),
-			// ExternalJobResponseAPI.class);
-			//Map<String, Object> map = new HashMap<>();
-			//map.put("name", employee.getName());
-			//map.put("age", employee.getAge());
-			//xmlMapper.writeValueAsString()
 			payload = mapper.writeValueAsString(ejrAPI);
 			LOGGER.info("outbound json='{}'", payload);
 		} catch (IOException e) {

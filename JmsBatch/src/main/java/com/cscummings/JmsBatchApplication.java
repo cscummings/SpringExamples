@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 @SpringBootApplication
 public class JmsBatchApplication {
 
+	
 	public static void main(String[] args) {
 		SpringApplication.run(JmsBatchApplication.class, args);
 	}
