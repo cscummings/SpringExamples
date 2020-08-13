@@ -65,11 +65,15 @@ public class JmsConfig {
 	Jaxb2Marshaller marshaller() throws PropertyException {
 	    Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
 	    marshaller.setClassesToBeBound(ExternalJobResponseAPI.class, ExternalJobRequestAPI.class);
+        // We need to set marshaller properties to reconfigure the XML header.
         Map<String, Object> marshallerProperties = new HashMap<>();
         Map<String, Object> unMarshallerProperties = new HashMap<>();
         marshallerProperties.put(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         unMarshallerProperties.put(Marshaller.JAXB_FRAGMENT, Boolean.TRUE);
         marshaller.setMarshallerProperties(marshallerProperties);
+        //marshaller.setUnmarshallerProperties(marshallerProperties);
+
+        // Remove the header that JAXB will generate.
 	    return marshaller;
 	}
 

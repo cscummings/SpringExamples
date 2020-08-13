@@ -2,7 +2,7 @@
 <configuration>
 	<include
 		resource="org/springframework/boot/logging/logback/defaults.xml" />
-	<property name="batch_name" value="JmsBatch" />
+	<property name="batch_name" value="MQMessageAuditing" />
 	<property name="LOG_FILE"
 		value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}" />
 	<include
@@ -14,7 +14,7 @@
 			</pattern>
 		</encoder>
 	</appender>
-	<appender name="JmsBatchfile"
+	<appender name="mqAuditlogfile"
 		class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<File>./logs/com.cscummings.-${batch_name}.log</File>
 
@@ -38,15 +38,15 @@
 
 	<logger name="org.springframework.jdbc" level="TRACE"
 		additivity="false">
-		<appender-Ref ref="JmsBatchfile" />
+		<appender-Ref ref="mqAuditlogfile" />
 	</logger>
 	<logger name="org.springframework.jms" level="DEBUG"
 		additivity="false">
-		<appender-Ref ref="JmsBatchfile" />
+		<appender-Ref ref="mqAuditlogfile" />
 	</logger>
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
-		<appender-ref ref="JmsBatchfile" />
+		<appender-ref ref="mqAuditlogfile" />
 	</root>
 </configuration>

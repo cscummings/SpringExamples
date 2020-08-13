@@ -48,10 +48,10 @@ import com.cscummings.processor.ExternalJobResponseAPIProcessor;
 @EnableJms
 @Configuration
 @Import({ JmsConfig.class, DataBaseConfig.class })
-@ComponentScan(basePackages = { Constants.base_package, "com.cscummings.common", "com.cscummings.dwss.model", "com.cscummings.config",
-		"com.cscummings.dwss.jms" })
-@PropertySource(value = { "file:${spring.config.location}${spring.profiles.active}.properties"}, ignoreResourceNotFound = false)
+@ComponentScan(basePackages = { Constants.base_package, "gov.nv.dwss.common", "gov.nv.dwss.model", "gov.nv.dwss.config",
+		"gov.nv.dwss.jms" })
 //@PropertySource(value = { "file:${spring.profiles.active}.properties" }, ignoreResourceNotFound = true)
+@PropertySource(value = { "file:${spring.config.location}${spring.profiles.active}.properties"}, ignoreResourceNotFound = false)
 
 @EnableBatchProcessing
 public class BatchConfig {
@@ -124,8 +124,8 @@ public class BatchConfig {
 	}
 
 	@Bean
-	public Job JmsBatchJob() throws PropertyException {
-		return jobBuilderFactory.get("JmsBatchJob").incrementer(new RunIdIncrementer())
+	public Job MQMessageAuditingJob() throws PropertyException {
+		return jobBuilderFactory.get("MQMessageAuditingJob").incrementer(new RunIdIncrementer())
 				.listener(jobExecutionListener()).flow(processSMARTCOMqueue()).end().build();
 	}
 
