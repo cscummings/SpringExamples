@@ -26,9 +26,9 @@ import org.springframework.oxm.Unmarshaller;
 import org.springframework.oxm.XmlMappingException;
 import org.springframework.stereotype.Component;
 
-import com.cscummings.model.ExternalJobResponseAPI;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.cscummings.model.ExternalJobResponseAPI;
 
 @Component
 public class ExternalJobResponseAPIMessageConverter implements MessageConverter {
@@ -63,15 +63,8 @@ public class ExternalJobResponseAPIMessageConverter implements MessageConverter 
 		ExternalJobResponseAPI ejrAPI = (ExternalJobResponseAPI) object;
 		String payload = null;
 		try {
-//			payload = mapper.writeValueAsString(ejrAPI.toString());
-			// ExternalJobResponseAPI ejrAPI = xmlMapper.readValue(object.toString(),
-			// ExternalJobResponseAPI.class);
-			//Map<String, Object> map = new HashMap<>();
-			//map.put("name", employee.getName());
-			//map.put("age", employee.getAge());
-			//xmlMapper.writeValueAsString()
 			payload = mapper.writeValueAsString(ejrAPI);
-			LOGGER.info("outbound json='{}'", payload);
+			LOGGER.debug("outbound json='{}'", payload);
 		} catch (IOException e) {
 			LOGGER.error("error converting form ejrAPI", e);
 		}
@@ -92,7 +85,7 @@ public class ExternalJobResponseAPIMessageConverter implements MessageConverter 
 		
 		try {
 			if (message instanceof TextMessage) {
-				System.out.println("this is the value received " + message.getBody(String.class));
+				LOGGER.debug("this is the value received " + message.getBody(String.class));
 				TextMessage textMessage = (TextMessage) message;
 				Object obj =  unmarshalFromTextMessage(textMessage, this.unmarshaller);
 				ExternalJobResponseAPI ejra = (ExternalJobResponseAPI)obj;
