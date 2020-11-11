@@ -129,6 +129,12 @@ public class BatchConfig {
 				.listener(jobExecutionListener()).flow(processSMARTCOMqueue()).end().build();
 	}
 
+//	.start(stepA())
+//	.on("*").to(stepB())
+//	.from(stepA()).on("FAILED").to(stepC())
+//	.end()
+//	.build();	
+	
 	@SuppressWarnings("unchecked")
 	private Step processSMARTCOMqueue() throws PropertyException {
 		return ((SimpleStepBuilder<ExternalJobResponseAPI, ExternalJobResponseAPI>) stepBuilderFactory.get("processSMARTCOMqueue")

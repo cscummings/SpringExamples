@@ -1,0 +1,6 @@
+echo off
+set CLASSPATH=./*;./sendNDNHJob/src/main;
+DIR=`dirname $0`
+cd $DIR
+"jre8/bin/java" -Djava.awt.headless=true java -jar lib/${project.version}.jar   --spring.profiles.active=application-dev --spring.batch.job.names=receiveNDNHJob $*
+

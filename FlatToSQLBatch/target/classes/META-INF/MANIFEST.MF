@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: Connie
+Build-Jdk: 14.0.2
+Implementation-Title: SNAP_NDNH_BATCH
+Implementation-Version: 0.1.0-ALPHA
+Implementation-Vendor-Id: com.cscummings.batch
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/SNAP_NDNH_BATC
+ H/
+Created-By: Maven Integration for Eclipse
+

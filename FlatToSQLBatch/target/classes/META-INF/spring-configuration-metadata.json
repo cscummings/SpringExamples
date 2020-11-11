@@ -1,0 +1,137 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.cscummings.batch.common.SpringBatchDatabaseProperties",
+      "name": "database",
+      "type": "com.cscummings.batch.common.SpringBatchDatabaseProperties"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.FileProperties",
+      "name": "file",
+      "type": "com.cscummings.batch.common.FileProperties"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads",
+      "type": "com.cscummings.batch.common.NomadsProperties"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads",
+      "type": "com.cscummings.batch.common.ItemReaderProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.cscummings.batch.common.SpringBatchDatabaseProperties",
+      "name": "database.driver",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.SpringBatchDatabaseProperties",
+      "name": "database.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.SpringBatchDatabaseProperties",
+      "name": "database.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.SpringBatchDatabaseProperties",
+      "name": "database.username",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.FileProperties",
+      "name": "file.n-d-n-h-recv-file",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.FileProperties",
+      "name": "file.n-d-n-h-send-file",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.FileProperties",
+      "name": "file.xml-layout",
+      "type": "java.io.File"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.driver",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.enddate",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.enddate",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.platform",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.platform",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.schema",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.schema",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.startdate",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.startdate",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.NomadsProperties",
+      "name": "nomads.username",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.cscummings.batch.common.ItemReaderProperties",
+      "name": "nomads.username",
+      "type": "java.lang.String"
+    }
+  ]
+}

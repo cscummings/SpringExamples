@@ -1,0 +1,23 @@
+
+
+To Build Deployable:
+
+1. manually create folder structure in maven repository - the db2 jars are not built in a format that
+is compatible with maven so you will have to copy/rename the jars.(the mvn install:install-file command
+does not work with db2 jars less than 10.5 apparently)
+
+2. once the maven repository entries are created the pom will include the db2 jars in the build
+
+
+from command line in roote directory run
+ 
+ mvn package -DskipTests
+
+open up jar in target directory and delete all the .properties and .bat files , etc - spring boot puts them in the jar and it will interfere with picking 
+up the correct properties files
+
+copy jar to deployables/lib; copy .bat files to deployabes/; copy properties files to deployables/ 
+
+
+To Run:
+java -jar lib/[name].jar   --spring.profiles.active=SNAPNDNH --spring.batch.job.names=receiveNDNHJob --nomads.startdate=2006-11-01 --nomads.enddate=2018-04-04

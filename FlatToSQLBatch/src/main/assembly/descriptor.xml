@@ -1,0 +1,33 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+	<id>application</id>
+	<formats>
+		<format>dir</format>
+	</formats>
+	<fileSets>
+		<fileSet>
+			<directory>${project.basedir}\src\main\resources</directory>
+			<outputDirectory>\Deployables\config</outputDirectory>
+			<includes>
+				<include>application.properties</include>
+				<include>application-SNAPNDNH.properties</include>
+				<include>application-dev-receive.properties</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${project.basedir}\src\main\resources</directory>
+			<outputDirectory>\</outputDirectory>
+			<includes>
+				<include>*.bat</include>
+			</includes>
+		</fileSet>
+		<fileSet>
+			<directory>${project.basedir}\target</directory>
+			<outputDirectory>\Deployables\lib</outputDirectory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>
